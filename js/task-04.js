@@ -1,9 +1,13 @@
 let counterValue = 0;
-const counter = document.querySelector("#counter");
+const button = document.querySelector('button[data-action="increment"]');
+const button2 = document.querySelector('button[data-action="decrement"]');
+const textHolder = document.getElementById("value");
+textHolder.innerHTML = counterValue;
 
-let increment = counter.lastElementChild;
-let decrement = counter.firstElementChild;
-let count = counter.querySelector("#value");
+button.addEventListener("click", function () {
+  textHolder.innerHTML = ++counterValue;
+});
 
-increment.addEventListener("click", () => (count.textContent = counterValue++));
-decrement.addEventListener("click", () => (count.textContent = counterValue--));
+button2.addEventListener("click", function () {
+  textHolder.innerHTML = --counterValue;
+});
