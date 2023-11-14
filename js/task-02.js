@@ -8,10 +8,11 @@ const ingredients = [
 ];
 
 const array = document.getElementById("ingredients");
-
+const elements = [];
 ingredients.map((ingredient) => {
   let li = document.createElement("li");
   li.textContent = ingredient;
   li.setAttribute("class", "item");
-  array.appendChild(li);
+  elements.push(li);
 });
+array.append(...elements);
